@@ -66,6 +66,9 @@ const config = {
       new OptimizeCssAssetsPlugin({}),
     ],
   },
+  externals: {
+    jquery: 'jQuery',
+  },
   plugins: [
     new BrowserSyncPlugin({
       ghostMode: {
