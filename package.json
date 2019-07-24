@@ -20,7 +20,8 @@
     "node": ">=10.15.3"
   },
   "dependencies": {
-    "autoprefixer": "^9.6.0"
+    "autoprefixer": "^9.6.0",
+    "normalize-css": "^2.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

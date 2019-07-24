@@ -3,9 +3,6 @@
 /* Core variables */
 @import 'base/vars';
 
-/* CSS Reset */
-@import 'base/reset';
-
 /* CSS print */
 @import 'base/print';
 
@@ -32,7 +29,10 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
-header {
+.siteHeader{
+  padding: 20px;
+}
+.demo {
   font-size: 2em;
   margin: 20px;
   color: $caption-color;
