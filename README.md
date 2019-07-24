@@ -43,18 +43,9 @@ $ npm start
 
 > You can still use `npm install` in cases the `npm ci` raises system error due to specific platfrom incompatibilities.
 
-
-### Assets Source
-
-* _SASS_ files are located under `/src/scss/`
-* _JavaScript_ files with support of _ES6 / ECMAScript 2016(ES7)_ files are located under `/src/js/`
-* _Image_ files are located under `/src/images/`
-* _Font_ files are located under `/src/fonts/`
-* _HTML_ files are located under `/src/`
-
 ### Production
 
-* Optimize assets for production by:
+Optimize assets for production by:
 
 ```sh
 $ npm run production
