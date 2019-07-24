@@ -19,9 +19,6 @@
 
 /* Components */
 
-/* Browser specific styles */
-@import 'dirty/hacks';
-
 /* Demo styles */
 
 body {
@@ -30,17 +27,24 @@ body {
   font-family: 'DINP-R', arial, serif;
 }
 
+.siteWrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
 header {
   font-size: 2em;
   margin: 20px;
   color: $caption-color;
   text-align: center;
-  background: $foreground-color url('../images/header/heading.png') center 20px no-repeat;
-  padding: 60px 30px 30px;
-  background-size: 160px;
+  background: $foreground-color url('../images/global/logo.png') 20px 20px no-repeat;
+  background-size: 50px;
+  padding: 30px;
+  min-height: 500px;
 }
 
 .logo {
   margin: 0 auto;
   display: block;
+  width: 50px;
 }

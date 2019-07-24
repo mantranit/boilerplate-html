@@ -39,7 +39,7 @@ const config = {
         use: [
           {
             loader: 'url-loader',
-            options: { name: 'images/design/[name].[ext]', publicPath: '../', limit: 8192 },
+            options: { name: 'images/design/[name].[hash[]].[ext]', publicPath: '../', limit: 8192 },
           },
         ],
       },
@@ -110,7 +110,12 @@ const config = {
       {
         from: path.resolve(__dirname, 'app', 'images'),
         to: path.resolve(__dirname, 'dist', 'assets', 'images'),
+        ignore: ['favicon.png'],
         toType: 'dir',
+      },
+      {
+        from: path.resolve(__dirname, 'app', 'images', 'favicon.png'),
+        to: path.resolve(__dirname, 'dist', 'favicon.png'),
       },
     ]),
   ].concat(htmlPage.map(html => new HtmlWebpackPlugin({
@@ -118,7 +123,7 @@ const config = {
     hash: true,
     filename: `../${html.replace('.twig', '.html')}`,
     template: path.resolve(__dirname, 'app', html),
-    favicon: path.resolve(__dirname, 'app', 'images', 'favicon.ico'),
+    favicon: path.resolve(__dirname, 'app', 'images', 'favicon.png'),
   }))).concat([
     new HtmlReplaceWebpackPlugin([
       {
