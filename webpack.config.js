@@ -13,7 +13,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageMinPlugin = require('imagemin-webpack-plugin').default;
 
-const htmlPage = fs.readdirSync('./app').filter(f => /\.html/g.test(f))
+const htmlPage = fs.readdirSync('./app').filter(f => /\.twig/g.test(f))
 
 const config = {
   entry: {
@@ -51,6 +51,10 @@ const config = {
             options: { name: 'fonts/[name].[ext]', publicPath: '../', limit: 8192 },
           },
         ],
+      },
+      {
+        test: /\.twig$/,
+        loader: 'twig-loader',
       },
     ],
   },
@@ -112,7 +116,7 @@ const config = {
   ].concat(htmlPage.map(html => new HtmlWebpackPlugin({
     inject: true,
     hash: true,
-    filename: `../${html}`,
+    filename: `../${html.replace('.twig', '.html')}`,
     template: path.resolve(__dirname, 'app', html),
     favicon: path.resolve(__dirname, 'app', 'images', 'favicon.ico'),
   }))).concat([
