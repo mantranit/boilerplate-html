@@ -9,10 +9,9 @@
     "url": "https://github.com/mantranit/boilerplate-html.git"
   },
   "scripts": {
-    "start": "webpack --mode=development --watch",
-    "build": "webpack --mode=development",
     "bundle": "npm install && npm start",
-    "production": "cross-env NODE_ENV=production webpack --mode=production",
+    "start": "webpack --mode=development --watch",
+    "build": "cross-env NODE_ENV=production webpack --mode=production",
     "lint-sass": "sass-lint -v -q --format=compact",
     "lint-js": "eslint --ext .js app/js/"
   },

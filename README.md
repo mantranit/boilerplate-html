@@ -50,7 +50,7 @@ $ npm start
 Optimize assets for production by:
 
 ```sh
-$ npm run production
+$ npm run build
 ```
 
 * _CSS_ files are located under `/dist/assets/css/`
