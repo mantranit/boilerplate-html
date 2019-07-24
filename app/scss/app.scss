@@ -17,10 +17,7 @@
 
 /* Vendor */
 
-/* Components */
-
-/* Demo styles */
-
+/* Layout */
 body {
   background: $body-background-color;
   color: $foreground-color;
@@ -32,22 +29,10 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
-.siteHeader{
-  padding: 20px;
-}
-.demo {
-  font-size: 2em;
-  margin: 20px;
-  color: $caption-color;
-  text-align: center;
-  background: $foreground-color url('../images/global/logo.png') 20px 20px no-repeat;
-  background-size: 50px;
-  padding: 30px;
-  min-height: 500px;
-}
 
-.logo {
-  margin: 0 auto;
-  display: block;
-  width: 50px;
-}
+/* Components */
+@import "layout/header";
+@import "layout/footer";
+
+/* Demo styles */
+@import "sections/demo";
