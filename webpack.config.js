@@ -19,8 +19,8 @@ const config = {
     app: './app/js/app.js',
   },
   output: {
-    filename: 'assets/js/[name].js',
-    path: path.resolve(__dirname, '.tmp'),
+    filename: 'js/[name].js',
+    path: path.resolve(__dirname, 'dist/assets'),
   },
   module: {
     rules: [
@@ -38,7 +38,7 @@ const config = {
         use: [
           {
             loader: 'url-loader',
-            options: { name: 'assets/images/design/[name].[hash:6].[ext]', publicPath: '../', limit: 8192 },
+            options: { name: 'images/design/[name].[ext]', publicPath: '../', limit: 8192 },
           },
         ],
       },
@@ -47,7 +47,7 @@ const config = {
         use: [
           {
             loader: 'url-loader',
-            options: { name: 'assets/fonts/[name].[hash:6].[ext]', publicPath: '../', limit: 8192 },
+            options: { name: 'fonts/[name].[ext]', publicPath: '../', limit: 8192 },
           },
         ],
       },
@@ -81,7 +81,7 @@ const config = {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].css',
+      filename: 'css/[name].css',
     }),
     new ImageMinPlugin({ test: /\.(jpg|jpeg|png|gif|svg)$/i }),
     new CleanWebpackPlugin({
@@ -103,15 +103,15 @@ const config = {
     }),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, 'app', 'images', 'content'),
-        to: path.resolve(__dirname, 'dist', 'assets', 'images', 'content'),
+        from: path.resolve(__dirname, 'app', 'images'),
+        to: path.resolve(__dirname, 'dist', 'assets', 'images'),
         toType: 'dir',
       },
     ]),
   ].concat(htmlPage.map(html => new HtmlWebpackPlugin({
     inject: true,
-    hash: false,
-    filename: `${html}`,
+    hash: true,
+    filename: `../${html}`,
     template: path.resolve(__dirname, 'app', html),
     favicon: path.resolve(__dirname, 'app', 'images', 'favicon.ico'),
   }))),
