@@ -15,6 +15,8 @@
 * Code style and formatting **linters** configuration and setup for:
   * SASS
   * JavaScript
+* Template engine
+  * Twig
 * Latest [Webpack 4](https://github.com/webpack/webpack) - JavaScript module bundler.
 * Latest [SASS/CSS](https://github.com/sass/node-sass) compiler based on `node-sass` which provides bindings to `libsass`.
 * Latest [Babel 7](https://github.com/babel/babel) (`@babel/core`) - JavaScript compiler - _Use next generation JavaScript, today._

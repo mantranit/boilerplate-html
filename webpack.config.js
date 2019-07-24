@@ -39,7 +39,7 @@ const config = {
         use: [
           {
             loader: 'url-loader',
-            options: { name: 'images/design/[name].[hash[]].[ext]', publicPath: '../', limit: 8192 },
+            options: { name: 'images/_design/[name].[ext]', publicPath: '../', limit: 0 },
           },
         ],
       },
@@ -48,7 +48,7 @@ const config = {
         use: [
           {
             loader: 'url-loader',
-            options: { name: 'fonts/[name].[ext]', publicPath: '../', limit: 8192 },
+            options: { name: 'fonts/[name].[ext]', publicPath: '../', limit: 0 },
           },
         ],
       },
