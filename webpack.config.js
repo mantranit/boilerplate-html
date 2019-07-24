@@ -7,6 +7,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlReplaceWebpackPlugin = require('html-replace-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -114,7 +115,14 @@ const config = {
     filename: `../${html}`,
     template: path.resolve(__dirname, 'app', html),
     favicon: path.resolve(__dirname, 'app', 'images', 'favicon.ico'),
-  }))),
+  }))).concat([
+    new HtmlReplaceWebpackPlugin([
+      {
+        pattern: '"images/',
+        replacement: '"assets/images/',
+      },
+    ]),
+  ]),
 };
 
 module.exports = config;
