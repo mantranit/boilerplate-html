@@ -21,6 +21,30 @@
     @media (max-width: 1279px) { @content; }
   }
 }
+$breakpoints: (
+  small: 768,
+  medium: 1024,
+  large: 1280
+);
+@mixin screen($breakpoint, $mobileFirst: true) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @if $mobileFirst {
+      @media screen and (min-width: #{map-get($breakpoints, $breakpoint) + 'px'}) {
+        @content;
+      }
+    }
+    @else {
+      @media screen and (max-width: #{(map-get($breakpoints, $breakpoint) - 1) + 'px'}) {
+        @content;
+      }
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
 
 // Text selection
 @mixin text-selection($color-selection, $color-selection-bg) {
