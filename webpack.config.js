@@ -71,6 +71,8 @@ const config = {
   },
   plugins: [
     new BrowserSyncPlugin({
+      // proxy: 'http://angels4us.man/',
+      open: 'external',
       ghostMode: {
         clicks: false,
         location: false,
