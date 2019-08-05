@@ -72,6 +72,9 @@ const config = {
   plugins: [
     new BrowserSyncPlugin({
       // proxy: 'http://angels4us.man/',
+      // files: [
+      //   'wanna/reload/this/file/*.php',
+      // ],
       open: 'external',
       ghostMode: {
         clicks: false,
